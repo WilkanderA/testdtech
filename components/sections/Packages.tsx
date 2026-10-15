@@ -147,7 +147,7 @@ export default function Packages() {
                     )}
 
                     {/* Title + price */}
-                    <div className="mb-6">
+                    <div className="mb-6 text-center">
                       <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-4">
                         {pkg.name}
                       </h3>
