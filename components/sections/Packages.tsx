@@ -4,13 +4,21 @@ import { motion } from "framer-motion";
 import { Check, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
 const packages = [
   {
     name: "Starter",
     price: "$400",
-    description: "Two dedicated videos cross-posted to TikTok and Instagram — perfect for first-time brand partnerships.",
+    description:
+      "Two dedicated videos cross-posted to TikTok and Instagram — perfect for first-time brand partnerships.",
     features: [
       "2 dedicated videos",
       "Cross-posted to TikTok & Instagram",
@@ -23,7 +31,8 @@ const packages = [
   {
     name: "Growth",
     price: "$550",
-    description: "Three videos with full cross-platform distribution to grow your brand reach.",
+    description:
+      "Three videos with full cross-platform distribution to grow your brand reach.",
     features: [
       "3 dedicated videos",
       "TikTok, Instagram & YouTube",
@@ -36,8 +45,9 @@ const packages = [
   },
   {
     name: "Pro",
-    price: "$750",
-    description: "Six videos across all platforms — ideal for sustained campaigns and product launches.",
+    price: "$1,000",
+    description:
+      "Six videos across all platforms — ideal for sustained campaigns and product launches.",
     features: [
       "6 dedicated videos",
       "All platforms",
@@ -52,7 +62,8 @@ const packages = [
   {
     name: "Enterprise",
     price: "$1,500",
-    description: "10 videos for brands looking for maximum exposure and a long-term creator partnership.",
+    description:
+      "10 videos for brands looking for maximum exposure and a long-term creator partnership.",
     features: [
       "10 dedicated videos",
       "All platforms",
@@ -67,7 +78,8 @@ const packages = [
   {
     name: "Custom",
     price: "Let's Talk",
-    description: "Build your own package — choose your video count, platforms, timeline, and deliverables.",
+    description:
+      "Build your own package — choose your video count, platforms, timeline, and deliverables.",
     features: [
       "You choose the video count",
       "You choose the platforms",
@@ -106,61 +118,80 @@ export default function Packages() {
           </p>
         </motion.div>
 
-        {/* Cards grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {packages.map((pkg, i) => (
-            <motion.div
-              key={pkg.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`relative flex flex-col p-6 rounded-2xl border transition-all ${
-                pkg.name === "Custom" ? "md:col-span-2 lg:col-span-1 lg:col-start-2" : ""
-              } ${
-                pkg.popular
-                  ? "bg-violet-950/40 border-violet-500 glow-violet"
-                  : "bg-zinc-900 border-zinc-800 hover:border-zinc-700"
-              }`}
-            >
-              {pkg.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-violet-600 text-white text-xs px-3 py-0.5 flex items-center gap-1">
-                    <Zap className="w-3 h-3" /> Most Popular
-                  </Badge>
-                </div>
-              )}
+        {/* Carousel */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <Carousel
+            opts={{ align: "start", loop: false }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {packages.map((pkg) => (
+                <CarouselItem
+                  key={pkg.name}
+                  className="pl-4 md:basis-1/2 lg:basis-1/3"
+                >
+                  <div
+                    className={`relative flex flex-col h-full p-6 rounded-2xl border transition-all ${
+                      pkg.popular
+                        ? "bg-violet-950/40 border-violet-500 glow-violet"
+                        : "bg-zinc-900 border-zinc-800 hover:border-zinc-700"
+                    }`}
+                  >
+                    {pkg.popular && (
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                        <Badge className="bg-violet-600 text-white text-xs px-3 py-0.5 flex items-center gap-1">
+                          <Zap className="w-3 h-3" /> Most Popular
+                        </Badge>
+                      </div>
+                    )}
 
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-1">{pkg.name}</h3>
-                <div className="text-3xl font-bold text-gradient mb-3">{pkg.price}</div>
-                <p className="text-zinc-500 text-sm leading-relaxed">{pkg.description}</p>
-              </div>
+                    <div className="mb-6">
+                      <h3 className="text-lg font-semibold mb-1">{pkg.name}</h3>
+                      <div className="text-3xl font-bold text-gradient mb-3">
+                        {pkg.price}
+                      </div>
+                      <p className="text-zinc-500 text-sm leading-relaxed">
+                        {pkg.description}
+                      </p>
+                    </div>
 
-              <div className="space-y-2.5 flex-1 mb-6">
-                {pkg.features.map((f) => (
-                  <div key={f} className="flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-violet-400 mt-0.5 shrink-0" />
-                    <span className="text-zinc-300 text-sm">{f}</span>
+                    <div className="space-y-2.5 flex-1 mb-6">
+                      {pkg.features.map((f) => (
+                        <div key={f} className="flex items-start gap-2.5">
+                          <Check className="w-4 h-4 text-violet-400 mt-0.5 shrink-0" />
+                          <span className="text-zinc-300 text-sm">{f}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <a
+                      href="#contact"
+                      className={cn(
+                        buttonVariants(),
+                        "w-full justify-center",
+                        pkg.popular
+                          ? "bg-violet-600 hover:bg-violet-500 text-white border-transparent"
+                          : "bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border-transparent"
+                      )}
+                    >
+                      {pkg.cta}
+                    </a>
                   </div>
-                ))}
-              </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
 
-              <a
-                href="#contact"
-                className={cn(
-                  buttonVariants(),
-                  "w-full justify-center",
-                  pkg.popular
-                    ? "bg-violet-600 hover:bg-violet-500 text-white border-transparent"
-                    : "bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border-transparent"
-                )}
-              >
-                {pkg.cta}
-              </a>
-            </motion.div>
-          ))}
-        </div>
+            <div className="flex items-center justify-center gap-3 mt-8">
+              <CarouselPrevious className="static translate-y-0 bg-zinc-900 border-zinc-700 hover:bg-zinc-800 hover:border-violet-500 text-zinc-300" />
+              <CarouselNext className="static translate-y-0 bg-zinc-900 border-zinc-700 hover:bg-zinc-800 hover:border-violet-500 text-zinc-300" />
+            </div>
+          </Carousel>
+        </motion.div>
       </div>
     </section>
   );
