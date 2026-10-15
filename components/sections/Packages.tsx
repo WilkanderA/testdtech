@@ -129,10 +129,10 @@ export default function Packages() {
               {packages.map((pkg) => (
                 <CarouselItem
                   key={pkg.name}
-                  className="pl-3 basis-4/5 sm:basis-1/2 lg:basis-1/4"
+                  className="pl-3 pt-5 basis-4/5 sm:basis-1/2 lg:basis-1/4"
                 >
                   <div
-                    className={`relative flex flex-col h-full p-5 rounded-2xl border transition-all ${
+                    className={`relative flex flex-col h-full min-h-130 p-6 rounded-2xl border transition-all ${
                       pkg.popular
                         ? "bg-violet-950/40 border-violet-500 glow-violet"
                         : "bg-zinc-900 border-zinc-800 hover:border-zinc-700"
@@ -147,30 +147,30 @@ export default function Packages() {
                     )}
 
                     {/* Title + price */}
-                    <div className="mb-4">
-                      <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+                    <div className="mb-6">
+                      <h3 className="text-xs font-semibold text-zinc-400 uppercase tracking-widest mb-4">
                         {pkg.name}
                       </h3>
-                      <div className="text-2xl font-bold text-gradient leading-none mb-1">
+                      <div className="text-4xl font-bold text-gradient leading-none mb-1">
                         {pkg.price}
                       </div>
-                      <div className="text-xs text-zinc-500">{pkg.perVideo}</div>
+                      <div className="text-sm text-zinc-500 mt-2">{pkg.perVideo}</div>
                     </div>
 
                     {/* Divider */}
-                    <div className="h-px bg-zinc-800 mb-4" />
+                    <div className="h-px bg-zinc-800 mb-6" />
 
                     {/* Video count pill */}
-                    <div className="inline-flex items-center gap-1.5 bg-zinc-800 rounded-full px-3 py-1 text-xs font-medium text-zinc-300 mb-4 w-fit">
+                    <div className="inline-flex items-center gap-1.5 bg-zinc-800 rounded-full px-3 py-1.5 text-xs font-medium text-zinc-300 mb-6 w-fit">
                       {pkg.videos}
                     </div>
 
                     {/* Features */}
-                    <div className="space-y-2 flex-1 mb-5">
+                    <div className="space-y-3 flex-1 mb-8">
                       {pkg.features.map((f) => (
-                        <div key={f} className="flex items-start gap-2">
-                          <Check className="w-3.5 h-3.5 text-violet-400 mt-0.5 shrink-0" />
-                          <span className="text-zinc-400 text-xs leading-relaxed">{f}</span>
+                        <div key={f} className="flex items-start gap-2.5">
+                          <Check className="w-4 h-4 text-violet-400 mt-0.5 shrink-0" />
+                          <span className="text-zinc-300 text-sm leading-relaxed">{f}</span>
                         </div>
                       ))}
                     </div>
@@ -178,8 +178,8 @@ export default function Packages() {
                     <a
                       href="#contact"
                       className={cn(
-                        buttonVariants({ size: "sm" }),
-                        "w-full justify-center text-xs",
+                        buttonVariants(),
+                        "w-full justify-center",
                         pkg.popular
                           ? "bg-violet-600 hover:bg-violet-500 text-white border-transparent"
                           : "bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border-transparent"
