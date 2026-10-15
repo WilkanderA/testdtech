@@ -36,10 +36,16 @@ export default function Contact() {
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (data: FormData) => {
-    // Placeholder — wire up Resend or any email API here
-    await new Promise((r) => setTimeout(r, 800));
-    console.log("Form submission:", data);
-    setSubmitted(true);
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (res.ok) {
+      setSubmitted(true);
+    } else {
+      alert("Something went wrong. Please try again or email directly.");
+    }
   };
 
   return (
@@ -61,8 +67,8 @@ export default function Contact() {
             <span className="text-gradient">collaborate</span>
           </h2>
           <p className="text-zinc-400">
-            Tell us about your brand and the package you&apos;re interested in.
-            We&apos;ll get back to you within 48 hours.
+            Tell me about your brand and the package you&apos;re interested in.
+            I&apos;ll get back to you within 48 hours.
           </p>
         </motion.div>
 
