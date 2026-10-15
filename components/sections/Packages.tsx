@@ -64,6 +64,21 @@ const packages = [
     popular: false,
     cta: "Contact Us",
   },
+  {
+    name: "Custom",
+    price: "Let's Talk",
+    description: "Build your own package — choose your video count, platforms, timeline, and deliverables.",
+    features: [
+      "You choose the video count",
+      "You choose the platforms",
+      "Flexible timeline",
+      "Custom deliverables",
+      "Negotiable usage rights",
+      "Dedicated support",
+    ],
+    popular: false,
+    cta: "Build Your Package",
+  },
 ];
 
 export default function Packages() {
@@ -92,7 +107,7 @@ export default function Packages() {
         </motion.div>
 
         {/* Cards grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {packages.map((pkg, i) => (
             <motion.div
               key={pkg.name}
@@ -101,6 +116,8 @@ export default function Packages() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`relative flex flex-col p-6 rounded-2xl border transition-all ${
+                pkg.name === "Custom" ? "md:col-span-2 lg:col-span-1 lg:col-start-2" : ""
+              } ${
                 pkg.popular
                   ? "bg-violet-950/40 border-violet-500 glow-violet"
                   : "bg-zinc-900 border-zinc-800 hover:border-zinc-700"
