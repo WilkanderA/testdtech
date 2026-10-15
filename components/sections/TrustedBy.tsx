@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 const brands = [
@@ -29,37 +31,28 @@ export default function TrustedBy() {
         </h2>
       </div>
 
-      {/* Marquee wrapper */}
-      <div className="relative flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-        <div className="flex shrink-0 gap-12 animate-marquee">
-          {brands.map((b) => (
+      <div
+        className="relative flex overflow-hidden"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+        }}
+      >
+        {/* Track — two copies side by side for seamless loop */}
+        <div className="flex animate-marquee">
+          {[...brands, ...brands].map((b, i) => (
             <div
-              key={b.name}
-              className="flex items-center justify-center w-32 shrink-0"
+              key={i}
+              className="flex items-center justify-center mx-10 shrink-0"
             >
               <Image
                 src={`/assets/${b.file}`}
                 alt={b.name}
                 width={120}
                 height={48}
-                className="object-contain opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 max-h-12 w-auto"
-              />
-            </div>
-          ))}
-        </div>
-        {/* Duplicate for seamless loop */}
-        <div className="flex shrink-0 gap-12 animate-marquee" aria-hidden>
-          {brands.map((b) => (
-            <div
-              key={`${b.name}-dup`}
-              className="flex items-center justify-center w-32 shrink-0"
-            >
-              <Image
-                src={`/assets/${b.file}`}
-                alt={b.name}
-                width={120}
-                height={48}
-                className="object-contain opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 max-h-12 w-auto"
+                className="object-contain opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 max-h-12 w-auto"
               />
             </div>
           ))}
