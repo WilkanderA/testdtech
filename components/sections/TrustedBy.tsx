@@ -45,14 +45,14 @@ export default function TrustedBy() {
           {[...brands, ...brands].map((b, i) => (
             <div
               key={i}
-              className="flex items-center justify-center mx-10 shrink-0"
+              className="flex items-center justify-center mx-6 shrink-0"
             >
               <Image
                 src={`/assets/${b.file}`}
                 alt={b.name}
-                width={120}
-                height={48}
-                className="object-contain opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 max-h-12 w-auto"
+                width={80}
+                height={36}
+                className="object-contain opacity-100 hover:opacity-100 transition-opacity brightness-200 hover:brightness-200 max-h-9 w-auto"
               />
             </div>
           ))}
