@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const packages = [
   {
     name: "Starter",
-    price: "$350",
+    price: "$400",
     description: "Two dedicated videos cross-posted to TikTok and Instagram — perfect for first-time brand partnerships.",
     features: [
       "2 dedicated videos",
@@ -22,7 +22,7 @@ const packages = [
   },
   {
     name: "Growth",
-    price: "$500",
+    price: "$550",
     description: "Three videos with full cross-platform distribution to grow your brand reach.",
     features: [
       "3 dedicated videos",
@@ -51,7 +51,7 @@ const packages = [
   },
   {
     name: "Enterprise",
-    price: "$1,000",
+    price: "$1,500",
     description: "10 videos for brands looking for maximum exposure and a long-term creator partnership.",
     features: [
       "10 dedicated videos",
