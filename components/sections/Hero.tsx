@@ -34,6 +34,15 @@ const socials = [
     ),
   },
   {
+    name: "Amazon",
+    href: "https://a.co/d/0gfHngTD",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+        <path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.685zm3.186 7.705c-.209.189-.512.201-.745.076-1.047-.869-1.233-1.273-1.808-2.103-1.731 1.766-2.956 2.294-5.197 2.294-2.652 0-4.714-1.636-4.714-4.91 0-2.557 1.387-4.298 3.365-5.149 1.714-.756 4.11-.891 5.942-1.099v-.41c0-.753.06-1.642-.384-2.294-.385-.579-1.124-.818-1.774-.818-1.206 0-2.282.618-2.545 1.897-.054.285-.261.567-.549.582l-3.076-.333c-.259-.056-.546-.266-.472-.662C5.57 2.387 8.55 1.5 11.23 1.5c1.37 0 3.162.365 4.243 1.403 1.37 1.284 1.239 2.995 1.239 4.858v4.402c0 1.323.549 1.903 1.066 2.618.181.253.221.555-.01.744l-2.624 2.27zm3.559 1.988C18.733 21.16 15.515 22.5 12.69 22.5c-3.949 0-7.52-1.46-10.218-3.892-.212-.192-.023-.454.232-.305 2.906 1.69 6.498 2.707 10.209 2.707 2.502 0 5.255-.519 7.785-1.594.381-.163.701.25.005.367zm.921-1.049c-.289-.372-1.92-.176-2.651-.089-.223.027-.257-.166-.057-.307 1.299-.913 3.429-.649 3.677-.344.249.309-.065 2.441-1.285 3.459-.188.157-.367.073-.283-.134.275-.685.888-2.214.599-2.585z" />
+      </svg>
+    ),
+  },
+  {
     name: "Linktree",
     href: "https://linktr.ee/TestDTech",
     icon: (
@@ -61,7 +70,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto mb-8 w-28 h-28 rounded-full bg-zinc-800 border-2 border-violet-500/50 glow-violet-sm flex items-center justify-center text-3xl font-bold text-gradient"
+          className="mx-auto mb-10 w-36 h-36 rounded-full bg-zinc-800 border-2 border-violet-500/50 glow-violet-sm flex items-center justify-center text-4xl font-bold text-gradient"
         >
           DT
         </motion.div>
@@ -71,10 +80,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-bold tracking-tight mb-4"
+          className="text-6xl md:text-8xl font-bold tracking-tight mb-6 font-(family-name:--font-orbitron)"
         >
-          Test D{" "}
-          <span className="text-gradient">Tech</span>
+          TEST D{" "}
+          <span className="text-gradient">TECH</span>
         </motion.h1>
 
         {/* Tagline */}
@@ -82,7 +91,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-8"
+          className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto mb-10"
         >
           Authentic Tech Content
         </motion.p>
@@ -92,7 +101,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex items-center justify-center gap-4 mb-10"
+          className="flex items-center justify-center gap-5 mb-12"
         >
           {socials.map((s) => (
             <a
@@ -101,7 +110,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.name}
-              className="w-10 h-10 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-violet-400 hover:border-violet-500 transition-all"
+              className="w-12 h-12 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-violet-400 hover:border-violet-500 transition-all"
             >
               {s.icon}
             </a>
@@ -119,17 +128,17 @@ export default function Hero() {
             href="#contact"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "bg-violet-600 hover:bg-violet-500 text-white glow-violet-sm px-8 border-transparent"
+              "bg-violet-600 hover:bg-violet-500 text-white glow-violet-sm px-14 py-7 text-lg border-transparent"
             )}
           >
             <Mail className="w-4 h-4 mr-2" />
-            Partner With Us
+            Let's Work Together
           </a>
           <a
             href="#packages"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
-              "border-zinc-700 hover:border-violet-500 hover:text-violet-400 text-zinc-300 bg-transparent"
+              "border-zinc-700 hover:border-violet-500 hover:text-violet-400 text-zinc-300 bg-transparent px-10 py-7 text-lg"
             )}
           >
             View Packages
