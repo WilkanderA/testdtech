@@ -52,7 +52,7 @@ export default function TrustedBy() {
                 alt={b.name}
                 width={80}
                 height={36}
-                className="object-contain opacity-100 hover:opacity-100 transition-opacity brightness-200 hover:brightness-200 max-h-9 w-auto"
+                className="object-contain max-h-9 w-auto invert brightness-200 opacity-80 hover:opacity-100 transition-opacity"
               />
             </div>
           ))}
