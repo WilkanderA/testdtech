@@ -1,5 +1,5 @@
 import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
+import TrustedBy from "@/components/sections/TrustedBy";
 import Stats from "@/components/sections/Stats";
 import Audience from "@/components/sections/Audience";
 import Packages from "@/components/sections/Packages";
@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <About />
+      <TrustedBy />
       <Stats />
       <Audience />
       <Packages />
