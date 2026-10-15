@@ -55,7 +55,7 @@ const packages = [
       "Priority scheduling",
     ],
     popular: false,
-    cta: "Go Pro",
+    cta: "Get Started",
   },
   {
     name: "Enterprise",
@@ -70,7 +70,7 @@ const packages = [
       "Long-term rates",
     ],
     popular: false,
-    cta: "Contact Us",
+    cta: "Get Started",
   },
   {
     name: "Custom",
@@ -85,7 +85,7 @@ const packages = [
       "Dedicated support",
     ],
     popular: false,
-    cta: "Build Your Package",
+    cta: "Get Started",
   },
 ];
 
