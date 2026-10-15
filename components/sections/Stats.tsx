@@ -64,7 +64,7 @@ export default async function Stats() {
   ];
 
   return (
-    <section id="stats" className="py-24 px-6 bg-zinc-900/30">
+    <section id="stats" className="py-24 px-6 bg-zinc-950">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

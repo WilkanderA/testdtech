@@ -10,7 +10,7 @@ const placeholders = Array.from({ length: 6 }, (_, i) => ({
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-24 px-6">
+    <section id="gallery" className="py-24 px-6 bg-zinc-900 border-y border-zinc-800">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div

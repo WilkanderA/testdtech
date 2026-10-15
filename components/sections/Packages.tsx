@@ -99,7 +99,7 @@ const packages = [
 
 export default function Packages() {
   return (
-    <section id="packages" className="py-24 px-6 bg-zinc-900/30">
+    <section id="packages" className="py-24 px-6 bg-zinc-950">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div

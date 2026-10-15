@@ -44,7 +44,7 @@ const geoList = [
 
 export default function Audience() {
   return (
-    <section id="audience" className="py-24 px-6">
+    <section id="audience" className="py-24 px-6 bg-zinc-900 border-y border-zinc-800">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div

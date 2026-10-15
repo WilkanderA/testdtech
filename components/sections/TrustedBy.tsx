@@ -20,7 +20,7 @@ const brands = [
 
 export default function TrustedBy() {
   return (
-    <section className="py-16 overflow-hidden">
+    <section className="py-16 overflow-hidden bg-zinc-900 border-y border-zinc-800">
       <div className="max-w-6xl mx-auto px-6 mb-10 text-center">
         <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-3">
           Trusted By
