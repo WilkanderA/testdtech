@@ -67,7 +67,7 @@ const packages = [
       "Unlimited usage rights",
       "Dedicated account support",
       "Custom reporting",
-      "Long-term rates",
+      "Priority scheduling",
     ],
     popular: false,
     cta: "Get Started",
@@ -82,7 +82,6 @@ const packages = [
       "Flexible video count",
       "Custom timeline",
       "Negotiable usage rights",
-      "Dedicated support",
     ],
     popular: false,
     cta: "Get Started",
@@ -161,8 +160,10 @@ export default function Packages() {
                     <div className="h-px bg-zinc-800 mb-6" />
 
                     {/* Video count pill */}
-                    <div className="inline-flex items-center gap-1.5 bg-zinc-800 rounded-full px-3 py-1.5 text-xs font-medium text-zinc-300 mb-6 w-fit">
-                      {pkg.videos}
+                    <div className="flex justify-center mb-6">
+                      <div className="inline-flex items-center gap-1.5 bg-zinc-800 rounded-full px-4 py-2 text-sm font-semibold text-zinc-200">
+                        {pkg.videos}
+                      </div>
                     </div>
 
                     {/* Features */}
