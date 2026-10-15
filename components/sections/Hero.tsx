@@ -91,7 +91,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto mb-10"
+          className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto mb-10 font-[\'Courier_New\',monospace]"
         >
           Authentic Tech Content
         </motion.p>
