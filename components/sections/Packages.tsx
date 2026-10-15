@@ -178,8 +178,8 @@ export default function Packages() {
                     <a
                       href="#contact"
                       className={cn(
-                        buttonVariants(),
-                        "w-full justify-center",
+                        buttonVariants({ size: "lg" }),
+                        "w-full justify-center py-6 text-sm font-semibold",
                         pkg.popular
                           ? "bg-violet-600 hover:bg-violet-500 text-white border-transparent"
                           : "bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border-transparent"
