@@ -17,11 +17,11 @@ const packages = [
   {
     name: "Starter",
     price: "$400",
-    description:
-      "Two dedicated videos cross-posted to TikTok and Instagram — perfect for first-time brand partnerships.",
+    perVideo: "$200/video",
+    videos: "2 Videos",
     features: [
-      "2 dedicated videos",
-      "Cross-posted to TikTok & Instagram",
+      "TikTok & Instagram",
+      "Cross-posted to both",
       "30-day usage rights",
       "Basic performance report",
     ],
@@ -31,14 +31,13 @@ const packages = [
   {
     name: "Growth",
     price: "$550",
-    description:
-      "Three videos with full cross-platform distribution to grow your brand reach.",
+    perVideo: "$183/video",
+    videos: "3 Videos",
     features: [
-      "3 dedicated videos",
       "TikTok, Instagram & YouTube",
+      "Story/reel cross-post",
       "60-day usage rights",
       "Detailed analytics report",
-      "Story/reel cross-post",
     ],
     popular: true,
     cta: "Get Started",
@@ -46,14 +45,13 @@ const packages = [
   {
     name: "Pro",
     price: "$1,000",
-    description:
-      "Six videos across all platforms — ideal for sustained campaigns and product launches.",
+    perVideo: "$167/video",
+    videos: "6 Videos",
     features: [
-      "6 dedicated videos",
       "All platforms",
+      "Story + short-form repurpose",
       "90-day usage rights",
       "Full analytics breakdown",
-      "Story + short-form repurpose",
       "Priority scheduling",
     ],
     popular: false,
@@ -62,15 +60,14 @@ const packages = [
   {
     name: "Enterprise",
     price: "$1,500",
-    description:
-      "10 videos for brands looking for maximum exposure and a long-term creator partnership.",
+    perVideo: "$150/video",
+    videos: "10 Videos",
     features: [
-      "10 dedicated videos",
       "All platforms",
       "Unlimited usage rights",
       "Dedicated account support",
       "Custom reporting",
-      "Long-term partnership rates",
+      "Long-term rates",
     ],
     popular: false,
     cta: "Contact Us",
@@ -78,13 +75,12 @@ const packages = [
   {
     name: "Custom",
     price: "Let's Talk",
-    description:
-      "Build your own package — choose your video count, platforms, timeline, and deliverables.",
+    perVideo: "Your terms",
+    videos: "You Choose",
     features: [
-      "You choose the video count",
-      "You choose the platforms",
-      "Flexible timeline",
-      "Custom deliverables",
+      "Any platform combo",
+      "Flexible video count",
+      "Custom timeline",
       "Negotiable usage rights",
       "Dedicated support",
     ],
@@ -129,14 +125,14 @@ export default function Packages() {
             opts={{ align: "start", loop: false }}
             className="w-full"
           >
-            <CarouselContent className="-ml-4">
+            <CarouselContent className="-ml-3">
               {packages.map((pkg) => (
                 <CarouselItem
                   key={pkg.name}
-                  className="pl-4 md:basis-1/2 lg:basis-1/3"
+                  className="pl-3 basis-4/5 sm:basis-1/2 lg:basis-1/4"
                 >
                   <div
-                    className={`relative flex flex-col h-full p-6 rounded-2xl border transition-all ${
+                    className={`relative flex flex-col h-full p-5 rounded-2xl border transition-all ${
                       pkg.popular
                         ? "bg-violet-950/40 border-violet-500 glow-violet"
                         : "bg-zinc-900 border-zinc-800 hover:border-zinc-700"
@@ -144,27 +140,37 @@ export default function Packages() {
                   >
                     {pkg.popular && (
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                        <Badge className="bg-violet-600 text-white text-xs px-3 py-0.5 flex items-center gap-1">
+                        <Badge className="bg-violet-600 text-white text-xs px-3 py-0.5 flex items-center gap-1 whitespace-nowrap">
                           <Zap className="w-3 h-3" /> Most Popular
                         </Badge>
                       </div>
                     )}
 
-                    <div className="mb-6">
-                      <h3 className="text-lg font-semibold mb-1">{pkg.name}</h3>
-                      <div className="text-3xl font-bold text-gradient mb-3">
+                    {/* Title + price */}
+                    <div className="mb-4">
+                      <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+                        {pkg.name}
+                      </h3>
+                      <div className="text-2xl font-bold text-gradient leading-none mb-1">
                         {pkg.price}
                       </div>
-                      <p className="text-zinc-500 text-sm leading-relaxed">
-                        {pkg.description}
-                      </p>
+                      <div className="text-xs text-zinc-500">{pkg.perVideo}</div>
                     </div>
 
-                    <div className="space-y-2.5 flex-1 mb-6">
+                    {/* Divider */}
+                    <div className="h-px bg-zinc-800 mb-4" />
+
+                    {/* Video count pill */}
+                    <div className="inline-flex items-center gap-1.5 bg-zinc-800 rounded-full px-3 py-1 text-xs font-medium text-zinc-300 mb-4 w-fit">
+                      {pkg.videos}
+                    </div>
+
+                    {/* Features */}
+                    <div className="space-y-2 flex-1 mb-5">
                       {pkg.features.map((f) => (
-                        <div key={f} className="flex items-start gap-2.5">
-                          <Check className="w-4 h-4 text-violet-400 mt-0.5 shrink-0" />
-                          <span className="text-zinc-300 text-sm">{f}</span>
+                        <div key={f} className="flex items-start gap-2">
+                          <Check className="w-3.5 h-3.5 text-violet-400 mt-0.5 shrink-0" />
+                          <span className="text-zinc-400 text-xs leading-relaxed">{f}</span>
                         </div>
                       ))}
                     </div>
@@ -172,8 +178,8 @@ export default function Packages() {
                     <a
                       href="#contact"
                       className={cn(
-                        buttonVariants(),
-                        "w-full justify-center",
+                        buttonVariants({ size: "sm" }),
+                        "w-full justify-center text-xs",
                         pkg.popular
                           ? "bg-violet-600 hover:bg-violet-500 text-white border-transparent"
                           : "bg-zinc-800 hover:bg-zinc-700 text-zinc-200 border-transparent"
