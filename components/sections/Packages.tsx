@@ -20,11 +20,12 @@ const packages = [
     perVideo: "$200/video",
     videos: "2 Videos",
     features: [
-      "TikTok & Instagram",
-      "Cross-posted to both",
-      "30-day usage rights",
-      "Basic performance report",
+      "2 Short-form videos",
+      "Cross-posted to TikTok & Instagram",
+      "Product showcase format",
+      "Link in bio placement",
     ],
+    rights: "30 days usage rights",
     popular: false,
     cta: "Get Started",
   },
@@ -34,11 +35,13 @@ const packages = [
     perVideo: "$183/video",
     videos: "3 Videos",
     features: [
+      "3 Short-form videos",
       "TikTok, Instagram & YouTube",
+      "Product showcase format",
       "Story/reel cross-post",
-      "60-day usage rights",
-      "Detailed analytics report",
+      "Link in bio placement",
     ],
+    rights: "60 days usage rights",
     popular: true,
     cta: "Get Started",
   },
@@ -48,12 +51,14 @@ const packages = [
     perVideo: "$167/video",
     videos: "6 Videos",
     features: [
+      "6 Short-form videos",
       "All platforms",
+      "Product showcase format",
       "Story + short-form repurpose",
-      "90-day usage rights",
-      "Full analytics breakdown",
+      "Link in bio placement",
       "Priority scheduling",
     ],
+    rights: "90 days usage rights",
     popular: false,
     cta: "Get Started",
   },
@@ -63,12 +68,15 @@ const packages = [
     perVideo: "$150/video",
     videos: "10 Videos",
     features: [
+      "10 Short-form videos",
       "All platforms",
-      "Unlimited usage rights",
-      "Dedicated account support",
-      "Custom reporting",
+      "Product showcase format",
+      "Story + short-form repurpose",
+      "Link in bio placement",
       "Priority scheduling",
+      "Dedicated account support",
     ],
+    rights: "Unlimited usage rights",
     popular: false,
     cta: "Get Started",
   },
@@ -78,11 +86,13 @@ const packages = [
     perVideo: "Your terms",
     videos: "You Choose",
     features: [
+      "Any video count",
       "Any platform combo",
-      "Flexible video count",
-      "Custom timeline",
-      "Negotiable usage rights",
+      "Product showcase format",
+      "Flexible timeline",
+      "Link in bio placement",
     ],
+    rights: "Negotiable usage rights",
     popular: false,
     cta: "Get Started",
   },
@@ -167,13 +177,20 @@ export default function Packages() {
                     </div>
 
                     {/* Features */}
-                    <div className="space-y-3 flex-1 mb-8">
+                    <div className="space-y-3 flex-1">
                       {pkg.features.map((f) => (
                         <div key={f} className="flex items-start gap-2.5">
                           <Check className="w-4 h-4 text-violet-400 mt-0.5 shrink-0" />
                           <span className="text-zinc-300 text-sm leading-relaxed">{f}</span>
                         </div>
                       ))}
+                    </div>
+
+                    {/* Usage rights */}
+                    <div className="h-px bg-zinc-800 my-5" />
+                    <div className="flex items-start gap-2.5 mb-6">
+                      <Check className="w-4 h-4 text-violet-400 mt-0.5 shrink-0" />
+                      <span className="text-zinc-300 text-sm">{pkg.rights}</span>
                     </div>
 
                     <a
