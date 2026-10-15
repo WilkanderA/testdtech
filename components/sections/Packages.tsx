@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils";
 const packages = [
   {
     name: "Starter",
-    price: "$---",
-    description: "A single dedicated video — ideal for product launches or awareness campaigns.",
+    price: "$350",
+    description: "Two dedicated videos cross-posted to TikTok and Instagram — perfect for first-time brand partnerships.",
     features: [
-      "1 dedicated video",
-      "TikTok placement",
+      "2 dedicated videos",
+      "Cross-posted to TikTok & Instagram",
       "30-day usage rights",
       "Basic performance report",
     ],
@@ -22,24 +22,24 @@ const packages = [
   },
   {
     name: "Growth",
-    price: "$---",
-    description: "Cross-platform reach for brands looking to maximize visibility.",
+    price: "$500",
+    description: "Three videos with full cross-platform distribution to grow your brand reach.",
     features: [
-      "2 dedicated videos",
-      "TikTok + Instagram",
+      "3 dedicated videos",
+      "TikTok, Instagram & YouTube",
       "60-day usage rights",
       "Detailed analytics report",
       "Story/reel cross-post",
     ],
     popular: true,
-    cta: "Most Popular",
+    cta: "Get Started",
   },
   {
     name: "Pro",
-    price: "$---",
-    description: "Full multi-platform coverage with extended content rights.",
+    price: "$750",
+    description: "Six videos across all platforms — ideal for sustained campaigns and product launches.",
     features: [
-      "3 dedicated videos",
+      "6 dedicated videos",
       "All platforms",
       "90-day usage rights",
       "Full analytics breakdown",
@@ -51,10 +51,10 @@ const packages = [
   },
   {
     name: "Enterprise",
-    price: "Custom",
-    description: "Tailored campaigns for brands with unique goals or ongoing partnerships.",
+    price: "$1,000",
+    description: "10 videos for brands looking for maximum exposure and a long-term creator partnership.",
     features: [
-      "Custom video count",
+      "10 dedicated videos",
       "All platforms",
       "Unlimited usage rights",
       "Dedicated account support",
