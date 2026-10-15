@@ -33,6 +33,15 @@ const socials = [
       </svg>
     ),
   },
+  {
+    name: "Linktree",
+    href: "https://linktr.ee/TestDTech",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+        <path d="M13.511 5.853l4.005-4.613 2.382 2.369-4.395 4.363h6.222v3.366h-6.241l4.414 4.363-2.382 2.369-4.935-4.949-4.934 4.949-2.382-2.369 4.414-4.363H2.874V7.972h6.222L4.701 3.609l2.382-2.369 4.005 4.613V0h3.366v5.853zM10.145 16.17h3.366v7.83h-3.366z" />
+      </svg>
+    ),
+  },
 ];
 
 export default function Hero() {
