@@ -41,7 +41,7 @@ export default function TrustedBy() {
         }}
       >
         {/* Two identical tracks side by side — animation moves exactly -50% so second half = first half */}
-        <div className="flex w-max animate-marquee">
+        <div className="flex w-max animate-marquee" style={{ willChange: "transform", transform: "translateZ(0)" }}>
           {[...brands, ...brands].map((b, i) => (
             <div
               key={i}
