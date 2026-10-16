@@ -14,7 +14,7 @@ const brands = [
   { name: "Insta360", file: "insta360logo.png", scale: 1.3 },
   { name: "KNF Concept", file: "knfconcept.png", scale: 1 },
   { name: "Nothing", file: "nothinglogo.png", scale: 1.4 },
-  { name: "Shokz", file: "shokz.png", scale: 1 },
+  { name: "Shokz", file: "shokz.png", scale: 0.7 },
   { name: "Turtle Beach", file: "turtlebeach.png", scale: 1 },
 ];
 
