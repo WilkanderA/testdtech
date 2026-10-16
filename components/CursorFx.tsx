@@ -16,16 +16,11 @@ export default function CursorFx() {
 
     let mx = -999, my = -999;
     let sx = -999, sy = -999;
-    let hasMoved = false;
 
     const onMove = (e: MouseEvent) => {
       mx = e.clientX; my = e.clientY;
       orb.style.left = mx + "px";
       orb.style.top  = my + "px";
-      if (!hasMoved) {
-        hasMoved = true;
-        sx = mx; sy = my;
-      }
     };
     window.addEventListener("mousemove", onMove);
 
@@ -87,6 +82,8 @@ export default function CursorFx() {
           background: "rgba(139,92,246,0.8)",
           boxShadow: "0 0 14px 5px rgba(139,92,246,0.4)",
           opacity: 0,
+          left: "-999px",
+          top: "-999px",
         }}
       />
     </>
