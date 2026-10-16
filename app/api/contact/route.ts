@@ -7,7 +7,7 @@ export async function POST(req: Request) {
     const { name, email, company, package: pkg, category, message } = await req.json();
 
     await resend.emails.send({
-      from: "Test D Tech Media Kit <onboarding@resend.dev>",
+      from: "Test D Tech <collabs@testdtech.com>",
       to: "collabs@testdtech.com",
       replyTo: email,
       subject: `New Partnership Inquiry — ${pkg} Package`,
@@ -30,7 +30,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error("Contact form error:", err);
-    return NextResponse.json({ success: false }, { status: 500 });
+    console.error("Contact form error:", JSON.stringify(err));
+    return NextResponse.json({ success: false, error: String(err) }, { status: 500 });
   }
 }
