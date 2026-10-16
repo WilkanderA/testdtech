@@ -26,8 +26,8 @@ export default function TrustedBy() {
           Trusted By
         </p>
         <h2 className="text-3xl md:text-4xl font-bold">
-          Partnered with{" "}
-          <span className="text-gradient">leading tech brands</span>
+          Partnered with leading {" "}
+          <span className="text-gradient">tech brands</span>
         </h2>
       </div>
 

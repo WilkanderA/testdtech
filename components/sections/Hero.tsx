@@ -1,9 +1,27 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useEffect } from "react";
 import { Mail, ExternalLink } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+
+function CountUp({ to }: { to: number }) {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (v) => {
+    if (v >= 1_000_000) return `${(v / 1_000_000).toFixed(1)}M+`;
+    if (v >= 1_000) return `${(v / 1_000).toFixed(1)}K+`;
+    return Math.round(v).toString();
+  });
+
+  useEffect(() => {
+    const controls = animate(count, to, { duration: 2, ease: "easeOut" });
+    return controls.stop;
+  }, [count, to]);
+
+  return <motion.span>{rounded}</motion.span>;
+}
 
 const socials = [
   {
@@ -70,9 +88,16 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="mx-auto mb-10 w-36 h-36 rounded-full bg-zinc-800 border-2 border-violet-500/50 glow-violet-sm flex items-center justify-center text-4xl font-bold text-gradient"
+          className="mx-auto mb-10 w-48 h-48 rounded-full border-2 border-violet-500/50 glow-violet-sm overflow-hidden"
         >
-          DT
+          <Image
+            src="/assets/profilepic.PNG"
+            alt="Test D Tech"
+            width={192}
+            height={192}
+            className="w-full h-full object-cover"
+            priority
+          />
         </motion.div>
 
         {/* Brand name */}
@@ -115,6 +140,23 @@ export default function Hero() {
               {s.icon}
             </a>
           ))}
+        </motion.div>
+
+        {/* Stat cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="flex items-center justify-center gap-4 mb-12"
+        >
+          <div className="flex flex-col items-center justify-center w-36 h-36 rounded-2xl bg-zinc-900 border border-zinc-800">
+            <span className="text-3xl font-bold text-gradient"><CountUp to={4000} /></span>
+            <span className="text-zinc-500 text-xs mt-1 text-center px-2">Total Followers</span>
+          </div>
+          <div className="flex flex-col items-center justify-center w-36 h-36 rounded-2xl bg-zinc-900 border border-zinc-800">
+            <span className="text-3xl font-bold text-gradient"><CountUp to={14500000} /></span>
+            <span className="text-zinc-500 text-xs mt-1 text-center px-2">Total Views</span>
+          </div>
         </motion.div>
 
         {/* CTA buttons */}

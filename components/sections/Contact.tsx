@@ -24,7 +24,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 const selectBase =
-  "w-full rounded-lg border border-zinc-700 bg-zinc-800 px-3 py-2 text-sm text-zinc-100 outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-colors";
+  "w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-3 text-base text-zinc-100 outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-colors";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -50,7 +50,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 px-6 bg-zinc-950">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -63,8 +63,8 @@ export default function Contact() {
             Get In Touch
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Let&apos;s{" "}
-            <span className="text-gradient">collaborate</span>
+            Let&apos;s make an impact {" "}
+            <span className="text-gradient">together</span>
           </h2>
           <p className="text-zinc-400">
             Tell me about your brand and the package you&apos;re interested in.
@@ -99,7 +99,7 @@ export default function Contact() {
                     id="name"
                     placeholder="Your name"
                     {...register("name")}
-                    className="bg-zinc-800 border-zinc-700 focus:border-violet-500 text-zinc-100 placeholder:text-zinc-600"
+                    className="bg-zinc-800 border-zinc-700 focus:border-violet-500 text-zinc-100 placeholder:text-zinc-600 h-12 text-base"
                   />
                   {errors.name && (
                     <p className="text-red-400 text-xs">{errors.name.message}</p>
@@ -116,7 +116,7 @@ export default function Contact() {
                     type="email"
                     placeholder="you@brand.com"
                     {...register("email")}
-                    className="bg-zinc-800 border-zinc-700 focus:border-violet-500 text-zinc-100 placeholder:text-zinc-600"
+                    className="bg-zinc-800 border-zinc-700 focus:border-violet-500 text-zinc-100 placeholder:text-zinc-600 h-12 text-base"
                   />
                   {errors.email && (
                     <p className="text-red-400 text-xs">{errors.email.message}</p>
@@ -133,7 +133,7 @@ export default function Contact() {
                   id="company"
                   placeholder="Your company (optional)"
                   {...register("company")}
-                  className="bg-zinc-800 border-zinc-700 focus:border-violet-500 text-zinc-100 placeholder:text-zinc-600"
+                  className="bg-zinc-800 border-zinc-700 focus:border-violet-500 text-zinc-100 placeholder:text-zinc-600 h-12 text-base"
                 />
               </div>
 
@@ -145,8 +145,14 @@ export default function Contact() {
                   </Label>
                   <select id="package" {...register("package")} className={selectBase} defaultValue="">
                     <option value="" disabled className="bg-zinc-900">Select package</option>
-                    {["Starter", "Growth", "Pro", "Enterprise"].map((p) => (
-                      <option key={p} value={p} className="bg-zinc-900">{p}</option>
+                    {[
+                      { value: "Starter", label: "Starter — 2 Videos · $400" },
+                      { value: "Growth", label: "Growth — 3 Videos · $550" },
+                      { value: "Pro", label: "Pro — 5 Videos · $850" },
+                      { value: "Enterprise", label: "Enterprise — 10 Videos · $1,500" },
+                      { value: "Custom", label: "Custom — Let's Talk" },
+                    ].map((p) => (
+                      <option key={p.value} value={p.value} className="bg-zinc-900">{p.label}</option>
                     ))}
                   </select>
                   {errors.package && (
@@ -161,7 +167,18 @@ export default function Contact() {
                   </Label>
                   <select id="category" {...register("category")} className={selectBase} defaultValue="">
                     <option value="" disabled className="bg-zinc-900">Select category</option>
-                    {["Peripherals", "Laptops / PCs", "Mobile", "Audio", "Monitors", "Accessories", "Other"].map((c) => (
+                    {[
+                      "Gaming Peripherals (mice, keyboards, headsets)",
+                      "PC Components (GPUs, CPUs, RAM, storage)",
+                      "Monitors & Displays",
+                      "Audio Equipment (mics, speakers, earbuds)",
+                      "Streaming Gear (capture cards, lighting, webcams)",
+                      "Desk & Setup (furniture, accessories, decor)",
+                      "Smart Home & Tech (gadgets, hubs, automation)",
+                      "Software & Apps",
+                      "Digital Products (courses, templates, assets)",
+                      "Other",
+                    ].map((c) => (
                       <option key={c} value={c} className="bg-zinc-900">{c}</option>
                     ))}
                   </select>
@@ -179,9 +196,9 @@ export default function Contact() {
                 <Textarea
                   id="message"
                   placeholder="Tell us about your product, campaign goals, and any specific requirements..."
-                  rows={5}
+                  rows={8}
                   {...register("message")}
-                  className="bg-zinc-800 border-zinc-700 focus:border-violet-500 text-zinc-100 placeholder:text-zinc-600 resize-none"
+                  className="bg-zinc-800 border-zinc-700 focus:border-violet-500 text-zinc-100 placeholder:text-zinc-600 resize-none text-base min-h-48"
                 />
                 {errors.message && (
                   <p className="text-red-400 text-xs">{errors.message.message}</p>
