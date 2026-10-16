@@ -42,7 +42,7 @@ export default function TrustedBy() {
       >
         {/* Track — two copies side by side for seamless loop */}
         <div className="flex animate-marquee">
-          {[...brands, ...brands].map((b, i) => (
+          {[...brands, ...brands, ...brands, ...brands].map((b, i) => (
             <div
               key={i}
               className="flex items-center justify-center mx-6 shrink-0"
