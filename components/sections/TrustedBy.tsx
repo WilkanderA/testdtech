@@ -8,7 +8,7 @@ const brands = [
   { name: "Aula", file: "aula.png" },
   { name: "Epomaker", file: "epomaker.png" },
   { name: "Fifine", file: "fifine.png" },
-  { name: "Geekon", file: "geekomlogo.png" },
+  { name: "Geekon", file: "Geekomlogo.png" },
   { name: "Gravastar", file: "gravastar.png" },
   { name: "HyperX", file: "hyperx.png" },
   { name: "Insta360", file: "insta360logo.png" },
