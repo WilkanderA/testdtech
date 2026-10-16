@@ -3,19 +3,19 @@
 import Image from "next/image";
 
 const brands = [
-  { name: "Ajazz", file: "ajazz.png" },
-  { name: "Arc Pulse", file: "arcpulse.png" },
-  { name: "Aula", file: "aula.png" },
-  { name: "Epomaker", file: "epomaker.png" },
-  { name: "Fifine", file: "fifine.png" },
-  { name: "Geekon", file: "geekomlogo1.png" },
-  { name: "Gravastar", file: "gravastar.png" },
-  { name: "HyperX", file: "hyperx.png" },
-  { name: "Insta360", file: "insta360logo.png" },
-  { name: "KNF Concept", file: "knfconcept.png" },
-  { name: "Nothing", file: "nothinglogo.png" },
-  { name: "Shokz", file: "shokz.png" },
-  { name: "Turtle Beach", file: "turtlebeach.png" },
+  { name: "Ajazz", file: "ajazz.png", scale: 1.3 },
+  { name: "Arc Pulse", file: "arcpulse.png", scale: 1 },
+  { name: "Aula", file: "aula.png", scale: 1 },
+  { name: "Epomaker", file: "epomaker.png", scale: 1 },
+  { name: "Fifine", file: "fifine.png", scale: 1.3 },
+  { name: "Geekon", file: "geekomlogo1.png", scale: 1 },
+  { name: "Gravastar", file: "gravastar.png", scale: 1 },
+  { name: "HyperX", file: "hyperx.png", scale: 1 },
+  { name: "Insta360", file: "insta360logo.png", scale: 1.3 },
+  { name: "KNF Concept", file: "knfconcept.png", scale: 1 },
+  { name: "Nothing", file: "nothinglogo.png", scale: 1.4 },
+  { name: "Shokz", file: "shokz.png", scale: 1 },
+  { name: "Turtle Beach", file: "turtlebeach.png", scale: 1 },
 ];
 
 export default function TrustedBy() {
@@ -50,10 +50,10 @@ export default function TrustedBy() {
               <Image
                 src={`/assets/${b.file}`}
                 alt={b.name}
-                width={120}
-                height={48}
-                className="object-contain invert brightness-200 opacity-80 hover:opacity-100 transition-opacity"
-                style={{ width: 120, height: 48 }}
+                width={160}
+                height={60}
+                className="invert brightness-200 opacity-80 hover:opacity-100 transition-opacity"
+                style={{ height: 44, width: "auto", maxWidth: 140, objectFit: "contain", transform: `scale(${b.scale})` }}
               />
             </div>
           ))}
