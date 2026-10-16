@@ -22,15 +22,23 @@ export default function CursorFx() {
       mx = e.clientX; my = e.clientY;
       orb.style.left = mx + "px";
       orb.style.top  = my + "px";
-
       if (!hasMoved) {
         hasMoved = true;
         sx = mx; sy = my;
-        orb.style.opacity  = "1";
-        spot.style.opacity = "1";
       }
     };
     window.addEventListener("mousemove", onMove);
+
+    const onEnter = () => {
+      orb.style.opacity  = "1";
+      spot.style.opacity = "1";
+    };
+    const onLeave = () => {
+      orb.style.opacity  = "0";
+      spot.style.opacity = "0";
+    };
+    document.documentElement.addEventListener("mouseenter", onEnter);
+    document.documentElement.addEventListener("mouseleave", onLeave);
 
     const onOver = () => {};
     window.addEventListener("mouseover", onOver);
@@ -48,6 +56,8 @@ export default function CursorFx() {
     return () => {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseover", onOver);
+      document.documentElement.removeEventListener("mouseenter", onEnter);
+      document.documentElement.removeEventListener("mouseleave", onLeave);
       cancelAnimationFrame(raf);
     };
   }, []);
