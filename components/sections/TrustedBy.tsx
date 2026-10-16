@@ -4,11 +4,11 @@ import Image from "next/image";
 
 const brands = [
   { name: "Ajazz", file: "ajazz.png", scale: 1.3 },
-  { name: "Arc Pulse", file: "arcpulse.png", scale: 1.5 },
-  { name: "Aula", file: "aula.png", scale: 1 },
-  { name: "Epomaker", file: "epomaker.png", scale: 1 },
+  { name: "Arc Pulse", file: "arcpulse.png", scale: 2.0 },
+  { name: "Aula", file: "aula.png", scale: 0.8 },
+  { name: "Epomaker", file: "epomaker.png", scale: 1.4 },
   { name: "Fifine", file: "fifine.png", scale: 1.3 },
-  { name: "Geekon", file: "geekomlogo1.png", scale: 1 },
+  { name: "Geekon", file: "geekomlogo1.png", scale: 0.7 },
   { name: "Gravastar", file: "gravastar.png", scale: 1 },
   { name: "HyperX", file: "hyperx.png", scale: 1 },
   { name: "Insta360", file: "insta360logo.png", scale: 1.3 },
@@ -45,7 +45,7 @@ export default function TrustedBy() {
           {[...brands, ...brands].map((b, i) => (
             <div
               key={i}
-              className="flex items-center justify-center mx-6 shrink-0"
+              className="flex items-center justify-center mx-10 shrink-0"
             >
               <Image
                 src={`/assets/${b.file}`}
