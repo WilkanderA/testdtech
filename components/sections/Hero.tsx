@@ -78,14 +78,14 @@ export default function Hero() {
       className="relative z-10 min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background — circuit board fade */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none z-10">
         {/* Fade the circuit board out toward center so text stays clean */}
         <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 70% at 50% 50%, #09090b 30%, transparent 100%)' }} />
         {/* Violet glow orb */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-violet-600/10 blur-[120px]" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pb-24">
+      <div className="relative z-20 max-w-4xl mx-auto px-6 text-center pb-24">
         {/* Avatar placeholder */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -197,7 +197,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
       >
         <span className="text-zinc-600 text-xs tracking-widest uppercase">Scroll</span>
         <motion.div
