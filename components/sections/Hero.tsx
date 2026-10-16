@@ -75,7 +75,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative z-10 min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background — circuit board fade */}
       <div className="absolute inset-0 pointer-events-none">

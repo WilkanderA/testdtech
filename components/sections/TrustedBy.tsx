@@ -20,7 +20,7 @@ const brands = [
 
 export default function TrustedBy() {
   return (
-    <section className="py-16 overflow-hidden bg-zinc-900 border-y border-zinc-800">
+    <section className="relative z-10 py-16 overflow-hidden bg-zinc-900 border-y border-zinc-800">
       <div className="max-w-6xl mx-auto px-6 mb-10 text-center">
         <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-3">
           Trusted By
@@ -32,7 +32,7 @@ export default function TrustedBy() {
       </div>
 
       <div
-        className="relative flex overflow-hidden"
+        className="relative overflow-hidden"
         style={{
           maskImage:
             "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
@@ -40,9 +40,9 @@ export default function TrustedBy() {
             "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
         }}
       >
-        {/* Track — two copies side by side for seamless loop */}
-        <div className="flex animate-marquee">
-          {[...brands, ...brands, ...brands, ...brands].map((b, i) => (
+        {/* Two identical tracks side by side — animation moves exactly -50% so second half = first half */}
+        <div className="flex w-max animate-marquee">
+          {[...brands, ...brands].map((b, i) => (
             <div
               key={i}
               className="flex items-center justify-center mx-6 shrink-0"

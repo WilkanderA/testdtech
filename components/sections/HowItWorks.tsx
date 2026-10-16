@@ -38,7 +38,7 @@ const items = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 px-6 bg-zinc-950">
+    <section id="how-it-works" className="relative z-10 py-24 px-6 bg-zinc-900 border-y border-zinc-800">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Orbitron } from "next/font/google";
 import "./globals.css";
+import CircuitOverlay from "@/components/CircuitOverlay";
+import CursorFx from "@/components/CursorFx";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +41,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} h-full`}
     >
-      <body className="min-h-full bg-background text-foreground">{children}</body>
+      <body className="min-h-full bg-background text-foreground">
+        <CircuitOverlay />
+        <CursorFx />
+        {children}
+      </body>
     </html>
   );
 }

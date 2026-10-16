@@ -86,6 +86,14 @@
   * {
     @apply border-border outline-ring/50;
   }
+  *, *::before, *::after,
+  a, button, input, textarea, select, label,
+  [role="button"], [tabindex] {
+    cursor: none !important;
+  }
+  a:hover, button:hover, [role="button"]:hover {
+    transform: scale(1.05) !important;
+  }
   html {
     @apply scroll-smooth;
     overflow-x: hidden;
@@ -93,14 +101,15 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     overflow-x: hidden;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M10 40h20M50 40h20M40 10v20M40 50v20M20 20h10v40h10M50 20h10v40h-10' fill='none' stroke='rgba(139,92,246,0.07)' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='3' fill='none' stroke='rgba(139,92,246,0.1)' stroke-width='1'/%3E%3Ccircle cx='20' cy='20' r='2' fill='rgba(139,92,246,0.08)'/%3E%3Ccircle cx='60' cy='60' r='2' fill='rgba(139,92,246,0.08)'/%3E%3Ccircle cx='20' cy='60' r='2' fill='rgba(139,92,246,0.08)'/%3E%3Ccircle cx='60' cy='20' r='2' fill='rgba(139,92,246,0.08)'/%3E%3C/svg%3E");
-    background-size: 80px 80px;
+    cursor: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M0 30h55M80 30h45M145 30h55' fill='none' stroke='rgba(139,92,246,0.06)' stroke-width='1.2'/%3E%3Cpath d='M0 75h30M60 75h90M170 75h30' fill='none' stroke='rgba(139,92,246,0.06)' stroke-width='1.2'/%3E%3Cpath d='M0 120h80M110 120h40M170 120h30' fill='none' stroke='rgba(139,92,246,0.06)' stroke-width='1.2'/%3E%3Cpath d='M0 160h20M50 160h60M130 160h70' fill='none' stroke='rgba(139,92,246,0.06)' stroke-width='1.2'/%3E%3Cpath d='M30 0v50M30 80v70M30 165v35' fill='none' stroke='rgba(139,92,246,0.06)' stroke-width='1.2'/%3E%3Cpath d='M80 0v30M80 55v45M80 125v75' fill='none' stroke='rgba(139,92,246,0.06)' stroke-width='1.2'/%3E%3Cpath d='M145 0v30M145 55v65M145 140v60' fill='none' stroke='rgba(139,92,246,0.06)' stroke-width='1.2'/%3E%3Cpath d='M170 75v45M170 140v60' fill='none' stroke='rgba(139,92,246,0.06)' stroke-width='1.2'/%3E%3Cpath d='M55 30v20h25' fill='none' stroke='rgba(139,92,246,0.06)' stroke-width='1.2'/%3E%3Cpath d='M110 120v-45h35' fill='none' stroke='rgba(139,92,246,0.06)' stroke-width='1.2'/%3E%3Cpath d='M50 160v-40h60' fill='none' stroke='rgba(139,92,246,0.06)' stroke-width='1.2'/%3E%3Cpath d='M170 120v-45' fill='none' stroke='rgba(139,92,246,0.06)' stroke-width='1.2'/%3E%3Ccircle cx='30' cy='30' r='4' fill='none' stroke='rgba(139,92,246,0.09)' stroke-width='1.5'/%3E%3Ccircle cx='30' cy='30' r='1.5' fill='rgba(139,92,246,0.09)'/%3E%3Ccircle cx='80' cy='30' r='4' fill='none' stroke='rgba(139,92,246,0.09)' stroke-width='1.5'/%3E%3Ccircle cx='80' cy='30' r='1.5' fill='rgba(139,92,246,0.09)'/%3E%3Ccircle cx='145' cy='30' r='4' fill='none' stroke='rgba(139,92,246,0.09)' stroke-width='1.5'/%3E%3Ccircle cx='145' cy='30' r='1.5' fill='rgba(139,92,246,0.09)'/%3E%3Ccircle cx='30' cy='75' r='3.5' fill='none' stroke='rgba(139,92,246,0.08)' stroke-width='1.5'/%3E%3Ccircle cx='30' cy='75' r='1.5' fill='rgba(139,92,246,0.08)'/%3E%3Ccircle cx='170' cy='75' r='3.5' fill='none' stroke='rgba(139,92,246,0.08)' stroke-width='1.5'/%3E%3Ccircle cx='170' cy='75' r='1.5' fill='rgba(139,92,246,0.08)'/%3E%3Ccircle cx='80' cy='120' r='4' fill='none' stroke='rgba(139,92,246,0.09)' stroke-width='1.5'/%3E%3Ccircle cx='80' cy='120' r='1.5' fill='rgba(139,92,246,0.09)'/%3E%3Ccircle cx='145' cy='75' r='3' fill='none' stroke='rgba(139,92,246,0.08)' stroke-width='1.5'/%3E%3Ccircle cx='145' cy='75' r='1.5' fill='rgba(139,92,246,0.08)'/%3E%3Ccircle cx='50' cy='160' r='3.5' fill='none' stroke='rgba(139,92,246,0.08)' stroke-width='1.5'/%3E%3Ccircle cx='50' cy='160' r='1.5' fill='rgba(139,92,246,0.08)'/%3E%3Ccircle cx='170' cy='120' r='3' fill='none' stroke='rgba(139,92,246,0.08)' stroke-width='1.5'/%3E%3Ccircle cx='170' cy='120' r='1.5' fill='rgba(139,92,246,0.08)'/%3E%3Crect x='88' y='83' width='34' height='34' rx='2' fill='none' stroke='rgba(139,92,246,0.07)' stroke-width='1.5'/%3E%3Cpath d='M95 83v-8M105 83v-8M115 83v-8' fill='none' stroke='rgba(139,92,246,0.05)' stroke-width='1'/%3E%3Cpath d='M95 117v8M105 117v8M115 117v8' fill='none' stroke='rgba(139,92,246,0.05)' stroke-width='1'/%3E%3Cpath d='M88 90h-8M88 100h-8M88 110h-8' fill='none' stroke='rgba(139,92,246,0.05)' stroke-width='1'/%3E%3Cpath d='M122 90h8M122 100h8M122 110h8' fill='none' stroke='rgba(139,92,246,0.05)' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 500px 500px;
   }
 }
 
 @keyframes marquee {
   from { transform: translateX(0); }
-  to { transform: translateX(-25%); }
+  to { transform: translateX(-50%); }
 }
 
 @layer utilities {
