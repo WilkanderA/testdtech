@@ -46,7 +46,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} h-full`}
     >
       <body className="min-h-full bg-background text-foreground">
-        <CircuitOverlay />
         <CursorFx />
         {children}
       </body>

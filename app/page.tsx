@@ -6,10 +6,12 @@ import Packages from "@/components/sections/Packages";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
+import CircuitOverlay from "@/components/CircuitOverlay";
 
 export default function Home() {
   return (
     <main className="relative z-10">
+      <CircuitOverlay />
       <Hero />
       <TrustedBy />
       <Audience />
