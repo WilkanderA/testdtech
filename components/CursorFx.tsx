@@ -7,6 +7,9 @@ export default function CursorFx() {
   const spotlightRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // no custom cursor on touch devices
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
     const orb  = orbRef.current;
     const spot = spotlightRef.current;
     if (!orb || !spot) return;
