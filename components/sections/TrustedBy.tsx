@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const brands = [
   { name: "Ajazz", file: "ajazz.png", scale: 1.3 },
-  { name: "Arc Pulse", file: "arcpulse.png", scale: 1 },
+  { name: "Arc Pulse", file: "arcpulse.png", scale: 1.5 },
   { name: "Aula", file: "aula.png", scale: 1 },
   { name: "Epomaker", file: "epomaker.png", scale: 1 },
   { name: "Fifine", file: "fifine.png", scale: 1.3 },
