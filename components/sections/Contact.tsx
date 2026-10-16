@@ -146,10 +146,10 @@ export default function Contact() {
                   <select id="package" {...register("package")} className={selectBase} defaultValue="">
                     <option value="" disabled className="bg-zinc-900">Select package</option>
                     {[
-                      { value: "Starter", label: "Starter — 2 Videos · $400" },
-                      { value: "Growth", label: "Growth — 3 Videos · $550" },
-                      { value: "Pro", label: "Pro — 5 Videos · $850" },
-                      { value: "Enterprise", label: "Enterprise — 10 Videos · $1,500" },
+                      { value: "Starter", label: "Starter — 2 Videos · $500" },
+                      { value: "Growth", label: "Growth — 3 Videos · $700" },
+                      { value: "Pro", label: "Pro — 5 Videos · $1,000" },
+                      { value: "Enterprise", label: "Enterprise — 10 Videos · $1,800" },
                       { value: "Custom", label: "Custom — Let's Talk" },
                     ].map((p) => (
                       <option key={p.value} value={p.value} className="bg-zinc-900">{p.label}</option>

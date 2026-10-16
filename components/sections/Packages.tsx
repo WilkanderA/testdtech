@@ -16,8 +16,8 @@ import { cn } from "@/lib/utils";
 const packages = [
   {
     name: "Starter",
-    price: "$400",
-    perVideo: "$200/video",
+    price: "$500",
+    perVideo: "$250/video",
     videos: "2 Videos",
     features: [
       "2 Short-form videos",
@@ -31,8 +31,8 @@ const packages = [
   },
   {
     name: "Growth",
-    price: "$550",
-    perVideo: "$183/video",
+    price: "$700",
+    perVideo: "$233/video",
     videos: "3 Videos",
     features: [
       "3 Short-form videos",
@@ -48,8 +48,8 @@ const packages = [
   },
   {
     name: "Pro",
-    price: "$850",
-    perVideo: "$170/video",
+    price: "$1,000",
+    perVideo: "$200/video",
     videos: "5 Videos",
     features: [
       "5 Short-form videos",
@@ -64,8 +64,8 @@ const packages = [
   },
   {
     name: "Enterprise",
-    price: "$1,500",
-    perVideo: "$150/video",
+    price: "$1,800",
+    perVideo: "$180/video",
     videos: "10 Videos",
     features: [
       "10 Short-form videos",
