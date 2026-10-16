@@ -82,7 +82,7 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-violet-600/10 blur-[120px]" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pb-24">
         {/* Avatar placeholder */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -126,7 +126,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex items-center justify-center gap-5 mb-12"
+          className="flex items-center justify-center gap-3 md:gap-5 mb-12 flex-wrap"
         >
           {socials.map((s) => (
             <a
@@ -149,12 +149,12 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.35 }}
           className="flex items-center justify-center gap-4 mb-12"
         >
-          <div className="flex flex-col items-center justify-center w-36 h-36 rounded-2xl bg-zinc-900 border border-zinc-800">
-            <span className="text-3xl font-bold text-gradient"><CountUp to={4000} /></span>
+          <div className="flex flex-col items-center justify-center w-28 h-28 md:w-36 md:h-36 rounded-2xl bg-zinc-900 border border-zinc-800">
+            <span className="text-2xl md:text-3xl font-bold text-gradient"><CountUp to={4000} /></span>
             <span className="text-zinc-500 text-xs mt-1 text-center px-2">Total Followers</span>
           </div>
-          <div className="flex flex-col items-center justify-center w-36 h-36 rounded-2xl bg-zinc-900 border border-zinc-800">
-            <span className="text-3xl font-bold text-gradient"><CountUp to={14500000} /></span>
+          <div className="flex flex-col items-center justify-center w-28 h-28 md:w-36 md:h-36 rounded-2xl bg-zinc-900 border border-zinc-800">
+            <span className="text-2xl md:text-3xl font-bold text-gradient"><CountUp to={14500000} /></span>
             <span className="text-zinc-500 text-xs mt-1 text-center px-2">Total Views</span>
           </div>
         </motion.div>
@@ -170,7 +170,7 @@ export default function Hero() {
             href="#contact"
             className={cn(
               buttonVariants({ size: "lg" }),
-              "bg-violet-600 hover:bg-violet-500 text-white glow-violet-sm px-14 py-7 text-lg border-transparent"
+              "bg-violet-600 hover:bg-violet-500 text-white glow-violet-sm px-8 md:px-14 py-5 md:py-7 text-base md:text-lg border-transparent w-full sm:w-auto"
             )}
           >
             <Mail className="w-4 h-4 mr-2" />
@@ -180,7 +180,7 @@ export default function Hero() {
             href="#packages"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
-              "border-zinc-700 hover:border-violet-500 hover:text-violet-400 text-zinc-300 bg-transparent px-10 py-7 text-lg"
+              "border-zinc-700 hover:border-violet-500 hover:text-violet-400 text-zinc-300 bg-transparent px-8 md:px-10 py-5 md:py-7 text-base md:text-lg w-full sm:w-auto"
             )}
           >
             View Packages

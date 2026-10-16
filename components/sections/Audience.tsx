@@ -216,7 +216,7 @@ export default function Audience() {
           <h3 className="text-sm font-medium text-zinc-400 tracking-widest uppercase mb-6 text-center">
             TikTok Analytics
           </h3>
-          <div className="flex justify-center gap-8">
+          <div className="flex justify-center gap-4 md:gap-8 flex-wrap">
             {["ttanalytics1.PNG", "ttanalytics2.PNG", "ttanalytics3.PNG"].map((file, i) => (
               <motion.button
                 key={file}
@@ -226,7 +226,7 @@ export default function Audience() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 whileHover={{ scale: 1.05 }}
                 onClick={() => setLightbox(`/assets/${file}`)}
-                className="w-36 rounded-xl overflow-hidden border border-zinc-800 hover:border-violet-500 transition-colors cursor-pointer shrink-0"
+                className="w-28 md:w-36 rounded-xl overflow-hidden border border-zinc-800 hover:border-violet-500 transition-colors cursor-pointer shrink-0"
               >
                 <Image
                   src={`/assets/${file}`}
