@@ -50,9 +50,10 @@ export default function TrustedBy() {
               <Image
                 src={`/assets/${b.file}`}
                 alt={b.name}
-                width={80}
-                height={36}
-                className="object-contain max-h-9 w-auto invert brightness-200 opacity-80 hover:opacity-100 transition-opacity"
+                width={120}
+                height={48}
+                className="object-contain invert brightness-200 opacity-80 hover:opacity-100 transition-opacity"
+                style={{ width: 120, height: 48 }}
               />
             </div>
           ))}
