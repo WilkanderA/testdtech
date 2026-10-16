@@ -40,9 +40,8 @@ export default function TrustedBy() {
             "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
         }}
       >
-        {/* Two identical tracks side by side — animation moves exactly -50% so second half = first half */}
         <div className="flex w-max animate-marquee" style={{ willChange: "transform", transform: "translateZ(0)" }}>
-          {[...brands, ...brands].map((b, i) => (
+          {[...brands, ...brands, ...brands].map((b, i) => (
             <div
               key={i}
               className="flex items-center justify-center mx-10 shrink-0"
@@ -52,6 +51,8 @@ export default function TrustedBy() {
                 alt={b.name}
                 width={160}
                 height={60}
+                priority
+                loading="eager"
                 className="invert brightness-200 opacity-80 hover:opacity-100 transition-opacity"
                 style={{ height: 44, width: "auto", maxWidth: 140, objectFit: "contain", transform: `scale(${b.scale})` }}
               />
