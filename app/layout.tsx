@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   title: "Test D Tech — Media Kit",
   description:
     "Official media kit for Test D Tech — tech content creator specializing in reviews, peripherals, and gear. Partner with us.",
+  icons: {
+    icon: "/assets/profilepic.PNG",
+    apple: "/assets/profilepic.PNG",
+  },
   openGraph: {
     title: "Test D Tech — Media Kit",
     description: "Partner with Test D Tech for authentic tech content.",
