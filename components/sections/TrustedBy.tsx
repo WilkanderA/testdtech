@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const brands = [
   { name: "Ajazz", file: "ajazz.png", scale: 1.3 },
@@ -19,6 +19,33 @@ const brands = [
 ];
 
 export default function TrustedBy() {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    // Preload all images before starting the animation
+    const imgs = Array.from(track.querySelectorAll("img")) as HTMLImageElement[];
+    const unique = imgs.slice(0, brands.length); // only need one set to preload
+    let loaded = 0;
+    const start = () => {
+      loaded++;
+      if (loaded >= unique.length) {
+        track.style.animationPlayState = "running";
+      }
+    };
+    unique.forEach((img) => {
+      if (img.complete) { start(); }
+      else { img.addEventListener("load", start); img.addEventListener("error", start); }
+    });
+    return () => {
+      unique.forEach((img) => {
+        img.removeEventListener("load", start);
+        img.removeEventListener("error", start);
+      });
+    };
+  }, []);
+
   return (
     <section className="relative z-10 py-16 overflow-hidden bg-zinc-900 border-y border-zinc-800">
       <div className="max-w-6xl mx-auto px-6 mb-10 text-center">
@@ -26,7 +53,7 @@ export default function TrustedBy() {
           Trusted By
         </p>
         <h2 className="text-3xl md:text-4xl font-bold">
-          Partnered with leading {" "}
+          Partnered with leading{" "}
           <span className="text-gradient">tech brands</span>
         </h2>
       </div>
@@ -34,25 +61,22 @@ export default function TrustedBy() {
       <div
         className="relative overflow-hidden"
         style={{
-          maskImage:
-            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
         }}
       >
-        <div className="flex w-max animate-marquee" style={{ willChange: "transform", transform: "translateZ(0)" }}>
+        <div
+          ref={trackRef}
+          className="flex w-max animate-marquee"
+          style={{ willChange: "transform", transform: "translateZ(0)", animationPlayState: "paused" }}
+        >
           {[...brands, ...brands, ...brands].map((b, i) => (
-            <div
-              key={i}
-              className="flex items-center justify-center mx-10 shrink-0"
-            >
-              <Image
+            <div key={i} className="flex items-center justify-center mx-10 shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={`/assets/${b.file}`}
                 alt={b.name}
-                width={160}
-                height={60}
-                priority
-                loading="eager"
+                fetchPriority="high"
                 className="invert brightness-200 opacity-80 hover:opacity-100 transition-opacity"
                 style={{ height: 44, width: "auto", maxWidth: 140, objectFit: "contain", transform: `scale(${b.scale})` }}
               />
