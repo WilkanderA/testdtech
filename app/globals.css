@@ -93,6 +93,8 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     overflow-x: hidden;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M10 40h20M50 40h20M40 10v20M40 50v20M20 20h10v40h10M50 20h10v40h-10' fill='none' stroke='rgba(139,92,246,0.07)' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='3' fill='none' stroke='rgba(139,92,246,0.1)' stroke-width='1'/%3E%3Ccircle cx='20' cy='20' r='2' fill='rgba(139,92,246,0.08)'/%3E%3Ccircle cx='60' cy='60' r='2' fill='rgba(139,92,246,0.08)'/%3E%3Ccircle cx='20' cy='60' r='2' fill='rgba(139,92,246,0.08)'/%3E%3Ccircle cx='60' cy='20' r='2' fill='rgba(139,92,246,0.08)'/%3E%3C/svg%3E");
+    background-size: 80px 80px;
   }
 }
 

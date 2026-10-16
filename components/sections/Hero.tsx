@@ -77,8 +77,11 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background glow orb */}
+      {/* Background — circuit board fade */}
       <div className="absolute inset-0 pointer-events-none">
+        {/* Fade the circuit board out toward center so text stays clean */}
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 70% at 50% 50%, #09090b 30%, transparent 100%)' }} />
+        {/* Violet glow orb */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 rounded-full bg-violet-600/10 blur-[120px]" />
       </div>
 
