@@ -8,13 +8,15 @@ export default function Footer() {
 
         <div className="flex items-center gap-6">
           {[
-            { label: "TikTok", href: "#" },
-            { label: "YouTube", href: "#" },
-            { label: "Instagram", href: "#" },
+            { label: "TikTok", href: "https://www.tiktok.com/@testd.tech" },
+            { label: "YouTube", href: "https://www.youtube.com/channel/UC2d8J25W7T0qJpYzRDNOJzw" },
+            { label: "Instagram", href: "https://www.instagram.com/testd.tech" },
           ].map((s) => (
             <a
               key={s.label}
               href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-zinc-500 hover:text-violet-400 transition-colors text-sm"
             >
               {s.label}
