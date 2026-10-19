@@ -16,11 +16,11 @@ import { cn } from "@/lib/utils";
 const packages = [
   {
     name: "Starter",
-    price: "$500",
+    price: "$250",
     perVideo: "$250/video",
-    videos: "2 Videos",
+    videos: "1 Video",
     features: [
-      "2 Short-form videos",
+      "1 Short-form video",
       "Cross-posted to TikTok & Instagram",
       "Product showcase format",
       "Link in bio placement",
@@ -31,8 +31,8 @@ const packages = [
   },
   {
     name: "Growth",
-    price: "$700",
-    perVideo: "$233/video",
+    price: "$600",
+    perVideo: "$200/video",
     videos: "3 Videos",
     features: [
       "3 Short-form videos",
@@ -40,7 +40,6 @@ const packages = [
       "Mix of formats (review, unboxing, comparison)",
       "Link in bio placement",
       "Story promotion included",
-      
     ],
     rights: "60 days usage rights",
     popular: true,
@@ -48,8 +47,8 @@ const packages = [
   },
   {
     name: "Pro",
-    price: "$1,000",
-    perVideo: "$200/video",
+    price: "$900",
+    perVideo: "$180/video",
     videos: "5 Videos",
     features: [
       "5 Short-form videos",
@@ -64,8 +63,8 @@ const packages = [
   },
   {
     name: "Enterprise",
-    price: "$1,800",
-    perVideo: "$180/video",
+    price: "$1,600",
+    perVideo: "$160/video",
     videos: "10 Videos",
     features: [
       "10 Short-form videos",
